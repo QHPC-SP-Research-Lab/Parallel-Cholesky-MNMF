@@ -13,7 +13,7 @@ Our proposed solution tries to reduce the computational cost of the multiplicati
 ## Getting Started
 * Clone the repository
 * Follow the instructions in the "Installation" section to setup dependencies
-* Run the **Lanza*.sh** files provided to understand the usage of the library
+* Run the **Lanza\*.sh** files provided to understand the usage of the library
 
 ## Installation
 The library has the following dependencies:
