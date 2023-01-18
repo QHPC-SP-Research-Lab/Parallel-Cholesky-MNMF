@@ -1,0 +1,17 @@
+CC     := gcc
+FLAGS  := -fPIC -Wall -m64 -O3 -fopenmp -shared -DOMP -I/opt/openblasNoOMP-0.3.21/include
+LIBCPU := -L/opt/openblasNoOMP-0.3.21/lib -lopenblas
+
+MATINC := $(MATLABROOT)/extern/include
+MATLIB := $(MATLABROOT)/bin/glnxa64 -lmx -lmex -lmat -lm -lstdc++
+
+all: cleanall CPUSolver.mexa64
+
+CPUSolver.mexa64: CPUSolver.c CPUFunctions.c
+	$(CC) -o CPUSolver.mexa64 CPUSolver.c CPUFunctions.c $(FLAGS) $(LIBCPU) -I$(MATINC) -L$(MATLIB)
+
+clean:
+	rm -f *~
+
+cleanall: clean
+	rm -f CPUSolver.mexa64

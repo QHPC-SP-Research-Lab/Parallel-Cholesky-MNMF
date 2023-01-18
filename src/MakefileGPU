@@ -1,0 +1,17 @@
+NVCC    := nvcc
+COMPOPT := -ccbin gcc --compiler-options=-fPIC,-Wall,-m64,-O3,-fopenmp,-DOMP
+LIBGPU  := -lcublas -lcusolver -shared
+
+MATINC := $(MATLABROOT)/extern/include
+MATLIB := $(MATLABROOT)/bin/glnxa64 -lmx -lmex -lmat -lm -lstdc++
+
+all: cleanall GPUSolver.mexa64
+
+GPUSolver.mexa64: GPUSolver.cu GPUFunctions.cu
+	$(NVCC) -o GPUSolver.mexa64 GPUSolver.cu GPUFunctions.cu $(COMPOPT) $(LIBGPU) -I$(MATINC) -L$(MATLIB)
+
+clean:
+	rm -f *~
+
+cleanall: clean
+	rm -f GPUSolver.mexa64
