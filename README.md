@@ -28,14 +28,8 @@ We welcome contributions to this project. Please fork the repository and submit 
 
 ## Reference
 If you use this library in your research, please cite the following paper:
-''
-@article{paper-title,
-title={An efficient parallel kernel based on Cholesky decomposition to accelerate Multichannel Non-Negative Matrix Factorization},
-author={Author 1, Author 2, Author 3},
-journal={Journal Name},
-year={2023}
-}
-''
+
+> Antonio J. Muñoz-Montoro, Julio J. Carabias-Orti, Daniele Salvati et al. An efficient parallel kernel based on Cholesky decomposition to accelerate Multichannel Non-Negative Matrix Factorization, 17 October 2022, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-2152303/v1]
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
